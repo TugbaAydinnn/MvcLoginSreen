@@ -1,18 +1,4 @@
-﻿
-/* Fonts */
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-
-/* Import CSS */
-@import 'Content/css/bootstrap/bootstrap.min.css';
-@import 'Content/css/others/animate.css';
-@import 'Content/css/others/magnific-popup.css';
-@import 'Content/css/others/owl.carousel.min.css';
-@import 'Content/css/others/font-awesome.min.css';
-@import 'Content/css/others/pe-icon-7-stroke.css';
-/* Base CSS */
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }

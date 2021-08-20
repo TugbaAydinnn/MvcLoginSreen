@@ -1,0 +1,191 @@
+﻿@model LoginSreen.Models.MusteriBilgileri
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mid-class" >
+    <div class="art-right-w3ls"  >
+        <div style="background-color: rgba(72, 79, 75, 0.5); margin-left: 250px; margin-right: -300px; margin-top: 100px; margin-bottom: 100px;" >
+        <ul class="nav nav-tabs" >
+            <li class="active" ><a data-toggle="tab" href="#home" style="font-weight:900;">Giriş Yap</a></li>
+            <li><a data-toggle="tab" href="#menu1" style="font-weight:900;">Kayıt Ol</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3 style="color:#fff">Giriş Yap</h3>
+                @using (Html.BeginForm("SifreKontrol", "Login", FormMethod.Post))
+                {
+                    <div class="main">
+                        <div @*class="form-left-to-w3l"*@ style="margin-top:15px;">
+                            @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "Kullnıcı Adınızı Giriniz.", @style = "color:black" })
+                        </div>
+                        <div @*class="form-left-to-w3l "*@ style="margin-top:15px;">
+                            @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Şifrenizi Giriniz." })
+                            
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    @*<div class="left-side-forget">
+                <input type="checkbox" class="checked">
+                <span class="remenber-me">Remember me </span>
+            </div>*@
+                    <div class="right-side-forget">
+                        <a href="#" class="for">Şifreni mi unuttun?</a>
+            </div>
+                    <div class="clear"></div>
+                    <div class="btnn" style="margin-top:15px;">
+                        <button class="btn btn-primary">Giriş Yap</button>
+                    </div>
+                    
+                }
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3 style="color:#fff">Kayıt Ol</h3>
+                @using (Html.BeginForm("MusteriEkle", "Login", FormMethod.Post))
+                {
+            <div style="margin-top:15px;">
+                @*<label>Kullanıcı Adı</label>*@
+                @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "Kullanıcı Adını Giriniz." })
+               @Html.ValidationMessageFor(m => m.KullaniciAdi, "", new {@style="color:blue;" })
+            </div>
+                    <div style="margin-top:15px;">
+                        @*<label>Şifre</label>*@
+                        @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Şifrenizi Giriniz." })
+                        @Html.ValidationMessageFor(m => m.Sifre, "", new { @style = "color:red;" })
+                    </div>
+                    <div style="margin-top:15px;">
+                        <button class="btn btn-primary">Kayıt Ol</button>
+                    </div>
+
+                   
+
+                }
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-1">
+        <div style="margin-top:350%; margin-left:80%;">
+            <button class="btn btn-success rounded-circle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                <div> <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i></div>
+            </button>
+        </div>
+    </div>
+
+    <div class="art-left-w3ls">
+
+        
+            <div style="min-height: 120px; margin-top: 1%; ">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div >
+                        <h3 style="color:white">Müşteri Takip Sistemi</h3>
+                        <p style="color:white">Müşteri Takip Sistemi, işletmenizin müşteri devamlılığını sağlamayı hedefleyen, marka bilinirliğinizi destekleyen ve bu doğrultuda birbirinden farklı süreçleri paralel olarak yürütebilen bir çözümüdür. </p><br />
+                    </div>
+                    <h5 class="yazi">Sosyal Medya Hesaplarımız</h5>
+
+                    <div class="icDİv card card-body " style="width: 200px; background-color: rgba(200, 0, 0, 0.0); margin-top: 3px; margin-right: 2%;  " align="center">
+
+                        <div class="row">
+                            <div class="col-4" ><a href="#" style="color:#fff"><i class="fas fa-apple-alt fa-lg  text-center fa-2x "></i></a></div>
+                            <div class="col-4" ><a href="#" style="color:#fff"><i class="fas fa-ghost fa-lg  text-center fa-2x "></i></a></div>
+                            <div class="col-4" ><a href="#" style="color:#fff"><i class="fa fa-flask text-center fa-2x " aria-hidden="true"></i></a></div>
+                        </div>
+                       
+
+                    </div>
+                </div>
+            </div>
+      
+    </div>
+
+</div>
+
+
+
+
+    @*<div class="container" >
+        <div class="ortala" style="margin-top:13%; ">
+            <div class="container " >
+                <div style="margin-top:20px;"></div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Giriş </a></li>
+                    <li><a data-toggle="tab" href="#menu1">Kayıt Ol</a></li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>Giriş</h3>
+                        <div class="col-md-7">
+                            @using (Html.BeginForm("SifreKontrol", "Login", FormMethod.Post))
+                            {
+                                <div>
+                                    <label>Kullanıcı Adı:</label>
+                                    @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "Kullnıcı Adınızı Giriniz."})
+                                </div>
+                                <div style="margin-top:15px;">
+                                    <label>Şifre</label>
+                                    @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Şifrenizi Giriniz." })
+                                </div>
+                                <div style="margin-top:15px;">
+                                    <button class="btn btn-primary">Giriş Yap</button>
+                                </div>
+                                <div style="margin-top:20px;"></div>
+
+                            }
+                        </div>
+                        <div class="col-md-1">
+                            <div style="margin-top:45px; margin-left:30px;">
+                                <button class="btn btn-primary rounded-circle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                                    <div> <i class="fa fa-chevron-right fa-3x" aria-hidden="true"></i></div>
+                                </button>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4" >
+                            <div style="min-height: 120px; ">
+                                <div class="collapse collapse-horizontal" id="collapseWidthExample"  >
+                                   <h5 class="yazi">Sosyal Medya Hesaplarımız</h5>
+                                    <div class="icDİv card card-body " style="width: 100px; background-color: rgba(200, 0, 0, 0.0); margin-top:3px; " align="center">
+
+                                        <a href="#" ><i class="fas fa-apple-alt fa-lg  text-center" ></i></a><br />
+                                        <a href="#"><i class="fas fa-ghost fa-lg  text-center"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>Kayıt Ol</h3>
+                        @using (Html.BeginForm("MusteriEkle", "Login", FormMethod.Post))
+                        {
+                            <div style="margin-top:15px;">
+                                <label>Kullanıcı Adı</label>
+                                @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", @placeholder = "Kullanıcı Adını Giriniz." })
+                            </div>
+                            <div style="margin-top:15px;">
+                                <label>Şifre</label>
+                                @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", @placeholder = "Şifrenizi Giriniz." })
+                            </div>
+                            <div style="margin-top:15px;">
+                                <button class="btn btn-primary">Kayıt Ol</button>
+                            </div>
+                            <div style="margin-top:20px;"></div>
+
+                        }
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        </div>*@
+
+
+
+
+  
